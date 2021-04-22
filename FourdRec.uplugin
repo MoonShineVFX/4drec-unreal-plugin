@@ -2,7 +2,7 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "Fourd Rec Moonshine",
+	"FriendlyName": "4DRec Moonshine",
 	"Description": "",
 	"Category": "Other",
 	"CreatedBy": "eli",
@@ -16,13 +16,13 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "FourdLZ4",
+			"Name": "FourdRecRuntime",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		},
 		{
-			"Name": "FourdRecPlayer",
-			"Type": "Runtime",
+			"Name": "FourdRecEditor",
+			"Type": "Editor",
 			"LoadingPhase": "Default"
 		}
 	],

@@ -2,22 +2,21 @@
 
 using UnrealBuildTool;
 
-public class FourdRecPlayer : ModuleRules
+public class FourdRecRuntime : ModuleRules
 {
-	public FourdRecPlayer(ReadOnlyTargetRules Target) : base(Target)
+	public FourdRecRuntime(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				// ... add public include paths required here ...
+				ModuleDirectory + "/Public"
 			}
 			);
-				
-		
+
 		PrivateIncludePaths.AddRange(
 			new string[] {
-				"FourdRecPlayer/Private"
+				ModuleDirectory + "/Private"
 			}
 			);
 			
@@ -37,10 +36,7 @@ public class FourdRecPlayer : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-				"FourdLZ4",
 				"ProceduralMeshComponent",
-				"ImageWrapper"
-				// ... add private dependencies that you statically link with here ...	
 			}
 			);
 		

@@ -5,10 +5,13 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-class FFourdRecPlayerModule : public IModuleInterface
+class FFourdRecEditorModule : public IModuleInterface
 {
-public:
+	void AddMenuBarExtension(FMenuBarBuilder& MenuBarBuilder);
+	void AddMenuExtension(FMenuBuilder& Builder);
+	void ImportCallback();
 
+public:
 	/** IModuleInterface implementation */
 	virtual void StartupModule() override;
 	virtual void ShutdownModule() override;

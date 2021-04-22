@@ -3,18 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Modules/ModuleManager.h"
 
-class FFourdLZ4Module : public IModuleInterface
-{
-public:
-
-	/** IModuleInterface implementation */
-	virtual void StartupModule() override;
-	virtual void ShutdownModule() override;
-};
-
-class FOURDLZ4_API FFourdLZ4
+class FLZ4wrapper
 {
 public:
 	static size_t GetDecompressedSize(const char* SrcBuffer, size_t SrcSize);

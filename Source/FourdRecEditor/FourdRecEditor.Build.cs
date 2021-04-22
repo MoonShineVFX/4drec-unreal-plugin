@@ -2,35 +2,39 @@
 
 using UnrealBuildTool;
 
-public class FourdLZ4 : ModuleRules
+public class FourdRecEditor : ModuleRules
 {
-	public FourdLZ4(ReadOnlyTargetRules Target) : base(Target)
+	public FourdRecEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+		
 		PublicIncludePaths.AddRange(
 			new string[] {
-				ModuleDirectory + "/lz4frame/include"
+				ModuleDirectory + "/Public",
 			}
-			);
+		);
 		
-		PublicAdditionalLibraries.Add(ModuleDirectory + "/lz4frame/lib/liblz4_static.lib");
-
+		
+		PublicAdditionalLibraries.Add(ModuleDirectory + "/Private/LZ4wrapper/liblz4_static.lib");
+		
+		
 		PrivateIncludePaths.AddRange(
 			new string[] {
-				// "Runtime/Core/Private/Compression",
-				"FourdLZ4/Private",
+				ModuleDirectory + "/Private",
+				ModuleDirectory + "/Private/LZ4wrapper",
+				ModuleDirectory + "/Private/Factories",
 			}
 			);
-
-
+			
+		
 		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
 				"Core",
-				// ... add other public dependencies that you statically link with here ...
 			}
 			);
-
+			
+		
 		PrivateDependencyModuleNames.AddRange(
 			new string[]
 			{
@@ -38,7 +42,12 @@ public class FourdLZ4 : ModuleRules
 				"Engine",
 				"Slate",
 				"SlateCore",
-				// ... add private dependencies that you statically link with here ...	
+				"ImageCore",
+				"ImageWrapper",
+				"ProceduralMeshComponent",
+				"FourdRecRuntime",
+				"UnrealEd",
+				"TextureCompressor"
 			}
 			);
 		
